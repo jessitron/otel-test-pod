@@ -1,0 +1,8 @@
+#!/bin/bash
+set -x
+
+kubectl delete pod otel-test-pod
+
+kubectl apply -f otel-test-pod.yaml
+
+kubectl exec otel-test-pod -i --tty -- bash
