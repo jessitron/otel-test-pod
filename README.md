@@ -20,7 +20,7 @@ Crucially, this sets the NODE_IP environment variable, which lets the pod call i
 
 ### Shell into the pod
 
-`kubectl exec otel-test-pod -i --tty -- ash`
+`kubectl exec otel-test-pod -i --tty -- bash`
 
 ### Try to hit the collector
 
@@ -42,6 +42,13 @@ If this returns a 405 METHOD NOT ALLOWED, hooray. Otherwise, this doesn't look l
 
 that creates the "latest"
 
+### push to docker hub
+
+I spent 20 minutes working on logging in to this. It may have worked.
+
+`docker login -u jessitron`
+and then use the access token in the password manager.
+
 then, per version that I want to publish:
 
 `docker tag jessitron/otel-test-pod jessitron/otel-test-pod:0.0.1`
@@ -51,12 +58,3 @@ then, per version that I want to publish:
 and then if I want people to use it:
 
 `docker push jessitron/otel-test-pod:latest`
-
-### push to docker hub
-
-I spent 20 minutes working on logging in to this. It may have worked.
-
-`docker login -u jessitron`
-and then use the access token in the password manager.
-
-
