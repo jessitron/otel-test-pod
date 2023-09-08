@@ -9,8 +9,8 @@ spec:
     - args:
         - sleep
         - "3600"
-      image: busybox
-      name: busybox
+      image: jessitron/otel-test-pod
+      name: otel-test-pod
       resources: {}
       env:
         - name: NODE_IP
