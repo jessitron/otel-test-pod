@@ -6,7 +6,7 @@
           {
             "key": "service.name",
             "value": {
-              "stringValue": "test-with-curl"
+              "stringValue": "otel-test-pod"
             }
           }
         ]
@@ -20,7 +20,7 @@
             {
               "traceId": "71699b6fe85982c7c8995ea3d9c95df2",
               "spanId": "3c191d03fa8be065",
-              "name": "spanitron",
+              "name": "test span",
               "kind": 2,
               "droppedAttributesCount": 0,
               "events": [],
