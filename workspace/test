@@ -1,3 +1,9 @@
 #!/bin/bash
 
-curl $NODE_IP:4318/v1/traces -X POST -H 'Content-Type: application/json' -d @sample-span.json
+new_trace_id=$(openssl rand -hex 16)
+new_span_id=$(openssl rand -hex 8)
+existing_trace_id="71699b6fe85982c7c8995ea3d9c95df2"
+existing_span_id="3c191d03fa8be065"
+
+cat sample-span.json | sed "s/$existing_trace_id/$new_trace_id/" | sed "s/$existing_span_id/$new_span_id/" | \
+   curl -v $NODE_IP:4318/v1/traces -H 'Content-Type: application/json' -d @-
