@@ -9,6 +9,7 @@ This repository builds a Docker image that lets you run a pod
 that can send a test span.
 
 Expectation: the opentelemetry collector is running on every node, and it's listening for OTLP traces over HTTP, on its usual port, 4318.
+I followed [this blog post](https://www.honeycomb.io/deploying-opentelemetry-collector-kubernetes-helm) to set that up.
 
 Why is this so hard.
 
