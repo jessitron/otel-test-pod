@@ -35,3 +35,17 @@ If this returns a 405 METHOD NOT ALLOWED, hooray. Otherwise, this doesn't look l
 ### Delete the pod
 
 `kubectl delete pod otel-test-pod`
+
+
+## Building the image
+
+`docker build -t jessitron/otel-test-pod .`
+
+### push to docker hub
+
+I spent 20 minutes working on logging in to this. It may have worked.
+
+`docker login -u jessitron`
+and then use the access token in the password manager.
+
+
