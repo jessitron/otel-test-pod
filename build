@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+set -x
+
+docker build -t jessitron/otel-test-pod .
+
+docker push jessitron/otel-test-pod
