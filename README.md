@@ -17,6 +17,8 @@ Why is this so hard.
 
 ### Create the pod
 
+You can clone this repo, or copy the [yaml](https://raw.githubusercontent.com/jessitron/otel-test-pod/main/otel-test-pod.yaml) into a file of your own. Then apply it:
+
 `kubectl apply -f otel-test-pod.yaml`
 
 This spins up a pod using an image in Dockerhub. That image was built with the Dockerfile you see here.

@@ -8,6 +8,13 @@ existing_service_name=otel-test-pod
 
 cat sample-span.json | sed "s/$existing_trace_id/$new_trace_id/" | sed "s/$existing_span_id/$new_span_id/" | \
   curl -v $NODE_IP:4318/v1/traces -H 'Content-Type: application/json' -d @-
+# or as a one-liner:
+cat sample-span.json | \
+  sed "s/71699b6fe85982c7c8995ea3d9c95df2/$(openssl rand -hex 16)/" | \
+  sed "s/3c191d03fa8be065/$(openssl rand -hex 8)/" | \
+  curl -v $NODE_IP:4318/v1/traces -H 'Content-Type: application/json' -d @-
+
+
 
 if [ $? -eq 0 ]; then
   echo
